@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hollow Oak Carpentry &amp; Painting (sample site)</title>
+<meta name="description" content="A sample phone-first website for a made-up carpentry and painting company.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #C2410C;
+    --ink: #1E2A33;
+    --muted: #4A5761;
+    --soft: #F7F6F2;
+    --line: #E2E0DA;
+    --chip: #F1EFEA;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Inter, system-ui, sans-serif;
+    color: var(--ink);
+    background: #fff;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+  a { color: var(--ink); }
+  a:hover { color: var(--accent); }
+  h1, h2, .brand { font-family: Archivo, Inter, sans-serif; font-weight: 800; letter-spacing: -0.01em; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding-left: 20px; padding-right: 20px; }
+  .demo-note { background: var(--chip); color: #3D4A54; font-size: 13px; text-align: center; padding: 8px 16px; }
+  header.top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding-top: 16px; padding-bottom: 16px; }
+  .logo { display: flex; align-items: center; gap: 10px; }
+  .brand { font-size: 22px; }
+  .tel-link { font-weight: 600; font-size: 18px; text-decoration: none; display: flex; align-items: center; gap: 8px; min-height: 44px; }
+  .hero { background: var(--ink); color: #fff; }
+  .hero .wrap { padding-top: 56px; padding-bottom: 64px; display: flex; flex-direction: column; gap: 20px; }
+  .hero h1 { font-size: clamp(36px, 6vw, 60px); line-height: 1.05; margin: 0; max-width: 760px; letter-spacing: -0.02em; }
+  .hero p { margin: 0; font-size: 19px; max-width: 620px; color: #D9DEE2; }
+  .btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+  .btn { text-decoration: none; font-weight: 600; font-size: 18px; padding: 14px 26px; border-radius: 10px; display: inline-flex; align-items: center; gap: 10px; min-height: 44px; }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { color: #fff; filter: brightness(0.92); }
+  .btn-light { background: #fff; color: var(--ink); }
+  .ticks { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 12px; font-size: 15px; color: #D9DEE2; }
+  section.block { padding-top: 40px; padding-bottom: 16px; }
+  section.block h2 { font-size: 32px; margin: 0 0 8px; }
+  .lead { margin: 0 0 24px; color: var(--muted); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .card { border: 1px solid var(--line); border-radius: 12px; padding: 22px; }
+  .card h3 { margin: 0 0 6px; font-size: 19px; }
+  .card p { margin: 0; color: var(--muted); }
+  .photo { aspect-ratio: 4 / 3; background: #E9E6DF; border-radius: 12px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 16px; color: var(--muted); font-size: 15px; }
+  .review { background: var(--soft); border-radius: 12px; padding: 22px; display: flex; flex-direction: column; gap: 10px; }
+  .stars { color: var(--accent); letter-spacing: 2px; }
+  .who { font-weight: 600; font-size: 15px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip { background: var(--chip); border-radius: 999px; padding: 8px 16px; font-size: 15px; }
+  .quote-box { background: var(--soft); border-radius: 16px; padding: 28px; display: flex; flex-wrap: wrap; gap: 32px; margin: 24px 0 40px; }
+  .quote-box .intro { flex: 1 1 280px; display: flex; flex-direction: column; gap: 10px; }
+  .quote-box .intro h2 { margin: 0; font-size: 32px; }
+  .quote-box .intro p { margin: 0; color: var(--muted); }
+  form { flex: 1 1 320px; display: flex; flex-direction: column; gap: 14px; }
+  label { font-weight: 600; font-size: 15px; display: flex; flex-direction: column; gap: 6px; }
+  input, select { font: inherit; font-weight: 400; padding: 12px 14px; border: 1px solid #C9C6BE; border-radius: 8px; min-height: 44px; background: #fff; color: var(--ink); }
+  button[type=submit] { background: var(--accent); color: #fff; border: 0; font: inherit; font-weight: 600; font-size: 18px; padding: 14px 24px; border-radius: 10px; min-height: 48px; cursor: pointer; }
+  .thanks { background: #E5F4E4; color: #1D4D1B; border-radius: 10px; padding: 16px; font-weight: 500; }
+  footer { background: var(--ink); color: #D9DEE2; font-size: 15px; }
+  footer .wrap { padding-top: 32px; padding-bottom: 100px; display: flex; flex-wrap: wrap; gap: 16px 40px; justify-content: space-between; }
+  footer .col { display: flex; flex-direction: column; gap: 4px; }
+  footer .brand { font-size: 18px; color: #fff; }
+  footer a { color: #fff; font-weight: 600; }
+  .call-bar { position: fixed; left: 0; right: 0; bottom: 0; display: flex; gap: 10px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: #fff; border-top: 1px solid var(--line); box-shadow: 0 -4px 16px rgba(30, 42, 51, 0.12); }
+  .call-bar a { flex: 1 1 0; color: #fff; text-decoration: none; font-weight: 600; text-align: center; padding: 12px; border-radius: 10px; min-height: 44px; }
+  .call-bar .call { background: var(--accent); }
+  .call-bar .text { background: var(--ink); }
+  @media (min-width: 900px) {
+    .call-bar { left: auto; right: 24px; bottom: 24px; width: 320px; border-radius: 14px; border: 1px solid var(--line); padding: 10px 12px; }
+    footer .wrap { padding-bottom: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-note">
+  Sample website by [YOUR BUSINESS NAME]. Hollow Oak Carpentry &amp; Painting is a made-up company, shown to demonstrate what your site could look like.
+</div>
+
+<header class="wrap top">
+  <div class="logo">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C2410C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3h12v5H4z"></path><path d="M16 5h3v6h-8v3"></path><path d="M10 14h2v7h-2z"></path></svg>
+    <span class="brand">Hollow Oak Carpentry &amp; Painting</span>
+  </div>
+  <a class="tel-link" href="tel:+13175550142">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></svg>
+    (317) 555-0142
+  </a>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>Repairs, trim and fresh paint, done right.</h1>
+      <p>Carpentry and interior and exterior painting across the Indianapolis area. Free estimates, licensed and insured, and a real person who texts you back.</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="tel:+13175550142">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></svg>
+          Call now
+        </a>
+        <a class="btn btn-light" href="sms:+13175550142">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          Text us a photo
+        </a>
+      </div>
+      <div class="ticks">
+        <span>&#10003; Free estimates</span>
+        <span>&#10003; Licensed and insured</span>
+        <span>&#10003; Serving Indy since [YEAR]</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap block">
+    <h2>What we do</h2>
+    <p class="lead">Small fixes or a whole-house repaint, one crew handles it.</p>
+    <div class="grid">
+      <div class="card"><h3>Interior painting</h3><p>Walls, ceilings, trim and cabinets, with furniture and floors protected.</p></div>
+      <div class="card"><h3>Exterior painting</h3><p>Siding, trim and doors, with scraping and prep done before any paint goes on.</p></div>
+      <div class="card"><h3>Carpentry and trim</h3><p>Baseboards, crown molding, doors, shelving and built-ins.</p></div>
+      <div class="card"><h3>Repairs</h3><p>Rotted wood, porch and deck boards, drywall patches and sticking doors.</p></div>
+    </div>
+  </section>
+
+  <section class="wrap block">
+    <h2>Our work</h2>
+    <p class="lead">Real jobs, real homes. Before and after.</p>
+    <div class="grid">
+      <div class="photo">[BEFORE PHOTO: a real job]</div>
+      <div class="photo">[AFTER PHOTO: the same job]</div>
+      <div class="photo">[PHOTO: a finished trim or built-in job]</div>
+    </div>
+  </section>
+
+  <section class="wrap block">
+    <h2>What neighbors say</h2>
+    <p class="lead">[RATING] stars from [NUMBER] reviews on Google</p>
+    <div class="grid">
+      <div class="review"><div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p style="margin:0">[A real customer review, copied from Google with permission]</p><span class="who">[Customer first name], [Neighborhood]</span></div>
+      <div class="review"><div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p style="margin:0">[A second real review]</p><span class="who">[Customer first name], [Neighborhood]</span></div>
+      <div class="review"><div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p style="margin:0">[A third real review]</p><span class="who">[Customer first name], [Neighborhood]</span></div>
+    </div>
+  </section>
+
+  <section class="wrap block">
+    <h2>Where we work</h2>
+    <div class="chips">
+      <span class="chip">Indianapolis</span><span class="chip">Carmel</span><span class="chip">Fishers</span><span class="chip">Zionsville</span>
+      <span class="chip">Avon</span><span class="chip">Greenwood</span><span class="chip">Lawrence</span><span class="chip">Speedway</span>
+    </div>
+  </section>
+
+  <section class="wrap" id="estimate">
+    <div class="quote-box">
+      <div class="intro">
+        <h2>Get a free estimate</h2>
+        <p>Four quick questions. We'll text you back, usually within an hour on workdays.</p>
+        <p>Rather just text? Send a photo of the project to <a href="sms:+13175550142" style="font-weight:600">(317) 555-0142</a>.</p>
+      </div>
+      <form id="quote-form">
+        <div class="thanks" id="thanks" hidden role="status">Thanks! On a real site, this request would arrive on the owner's phone as a text right now.</div>
+        <label for="q-name">Your name
+          <input id="q-name" type="text" autocomplete="name" required>
+        </label>
+        <label for="q-phone">Mobile number (we'll text you)
+          <input id="q-phone" type="tel" inputmode="tel" autocomplete="tel" required>
+        </label>
+        <label for="q-need">What do you need?
+          <select id="q-need">
+            <option>Interior painting</option>
+            <option>Exterior painting</option>
+            <option>Carpentry or trim</option>
+            <option>A repair</option>
+            <option>Not sure</option>
+          </select>
+        </label>
+        <label for="q-zip">ZIP code
+          <input id="q-zip" type="text" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}" title="5-digit ZIP code">
+        </label>
+        <button type="submit">Text me my estimate</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="col">
+      <span class="brand">Hollow Oak Carpentry &amp; Painting</span>
+      <span>Licensed and insured &middot; [LICENSE NUMBER]</span>
+    </div>
+    <div class="col">
+      <a href="tel:+13175550142">(317) 555-0142</a>
+      <span>Mon to Sat, [HOURS]</span>
+    </div>
+  </div>
+</footer>
+
+<nav class="call-bar" aria-label="Contact">
+  <a class="call" href="tel:+13175550142">Call</a>
+  <a class="text" href="sms:+13175550142">Text</a>
+</nav>
+
+<script>
+  // Demo only: show a thank-you message instead of sending the form anywhere.
+  document.getElementById('quote-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var thanks = document.getElementById('thanks');
+    thanks.hidden = false;
+    thanks.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    this.reset();
+  });
+</script>
+</body>
+</html>
