@@ -42,9 +42,9 @@
   .hero p { margin: 0; font-size: 19px; max-width: 620px; color: #D9DEE2; }
   .btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
   .btn { text-decoration: none; font-weight: 600; font-size: 18px; padding: 14px 26px; border-radius: 10px; display: inline-flex; align-items: center; gap: 10px; min-height: 44px; }
-  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary { background: var(--accent); color: #fff; border: 2px solid #fff; }
   .btn-primary:hover { color: #fff; filter: brightness(0.92); }
-  .btn-light { background: #fff; color: var(--ink); }
+  .btn-light { background: #fff; color: var(--ink); border: 2px solid var(--accent); }
   .ticks { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 12px; font-size: 15px; color: #D9DEE2; }
   section.block { padding-top: 40px; padding-bottom: 16px; }
   section.block h2 { font-size: 32px; margin: 0 0 8px; }
@@ -53,34 +53,36 @@
   .card { border: 1px solid var(--line); border-radius: 12px; padding: 22px; }
   .card h3 { margin: 0 0 6px; font-size: 19px; }
   .card p { margin: 0; color: var(--muted); }
+  .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+  .shot { position: relative; aspect-ratio: 4 / 3; padding: 0; border: 0; border-radius: 12px; overflow: hidden; background: #E9E6DF; cursor: zoom-in; font: inherit; color: var(--muted); }
+  .shot:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .shot .ph { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; text-align: center; padding: 12px; font-size: 14px; }
+  .shot .tag { position: absolute; left: 8px; top: 8px; background: var(--ink); color: #fff; font-size: 12px; font-weight: 600; padding: 3px 8px; border-radius: 6px; }
+  .lightbox { border: 0; padding: 0; background: transparent; max-width: 100vw; max-height: 100vh; width: 100vw; height: 100vh; }
+  .lightbox::backdrop { background: rgba(20, 28, 34, 0.92); }
+  .lb-inner { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 16px; box-sizing: border-box; }
+  .lb-stage { width: min(960px, 100%); aspect-ratio: 4 / 3; max-height: 72vh; background: #E9E6DF; border-radius: 12px; overflow: hidden; display: flex; align-items: center; justify-content: center; color: var(--muted); text-align: center; padding: 0; }
+  .lb-stage img { width: 100%; height: 100%; object-fit: contain; background: #111; }
+  .lb-caption { color: #fff; font-weight: 600; text-align: center; }
+  .lb-controls { display: flex; gap: 12px; align-items: center; }
+  .lb-btn { background: #fff; color: var(--ink); border: 2px solid var(--accent); border-radius: 10px; font: inherit; font-weight: 600; min-width: 48px; min-height: 48px; padding: 0 16px; cursor: pointer; }
+  .lb-count { color: #D9DEE2; font-size: 15px; min-width: 56px; text-align: center; }
   .photo { aspect-ratio: 4 / 3; background: #E9E6DF; border-radius: 12px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 16px; color: var(--muted); font-size: 15px; }
   .review { background: var(--soft); border-radius: 12px; padding: 22px; display: flex; flex-direction: column; gap: 10px; }
   .stars { color: var(--accent); letter-spacing: 2px; }
   .who { font-weight: 600; font-size: 15px; }
   .chips { display: flex; flex-wrap: wrap; gap: 10px; }
   .chip { background: var(--chip); border-radius: 999px; padding: 8px 16px; font-size: 15px; }
-  .quote-box { background: var(--soft); border-radius: 16px; padding: 28px; display: flex; flex-wrap: wrap; gap: 32px; margin: 24px 0 40px; }
+  .quote-box { background: var(--soft); border-radius: 16px; padding: 28px; display: flex; flex-wrap: wrap; gap: 32px; margin: 24px 0 56px; }
   .quote-box .intro { flex: 1 1 280px; display: flex; flex-direction: column; gap: 10px; }
   .quote-box .intro h2 { margin: 0; font-size: 32px; }
   .quote-box .intro p { margin: 0; color: var(--muted); }
   form { flex: 1 1 320px; display: flex; flex-direction: column; gap: 14px; }
   label { font-weight: 600; font-size: 15px; display: flex; flex-direction: column; gap: 6px; }
   input, select { font: inherit; font-weight: 400; padding: 12px 14px; border: 1px solid #C9C6BE; border-radius: 8px; min-height: 44px; background: #fff; color: var(--ink); }
-  button[type=submit] { background: var(--accent); color: #fff; border: 0; font: inherit; font-weight: 600; font-size: 18px; padding: 14px 24px; border-radius: 10px; min-height: 48px; cursor: pointer; }
+  button[type=submit] { background: var(--accent); color: #fff; border: 2px solid var(--ink); font: inherit; font-weight: 600; font-size: 18px; padding: 14px 24px; border-radius: 10px; min-height: 48px; cursor: pointer; }
   .thanks { background: #E5F4E4; color: #1D4D1B; border-radius: 10px; padding: 16px; font-weight: 500; }
-  footer { background: var(--ink); color: #D9DEE2; font-size: 15px; }
-  footer .wrap { padding-top: 32px; padding-bottom: 100px; display: flex; flex-wrap: wrap; gap: 16px 40px; justify-content: space-between; }
-  footer .col { display: flex; flex-direction: column; gap: 4px; }
-  footer .brand { font-size: 18px; color: #fff; }
-  footer a { color: #fff; font-weight: 600; }
-  .call-bar { position: fixed; left: 0; right: 0; bottom: 0; display: flex; gap: 10px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: #fff; border-top: 1px solid var(--line); box-shadow: 0 -4px 16px rgba(30, 42, 51, 0.12); }
-  .call-bar a { flex: 1 1 0; color: #fff; text-decoration: none; font-weight: 600; text-align: center; padding: 12px; border-radius: 10px; min-height: 44px; }
-  .call-bar .call { background: var(--accent); }
-  .call-bar .text { background: var(--ink); }
-  @media (min-width: 900px) {
-    .call-bar { left: auto; right: 24px; bottom: 24px; width: 320px; border-radius: 14px; border: 1px solid var(--line); padding: 10px 12px; }
-    footer .wrap { padding-bottom: 40px; }
-  }
 </style>
 </head>
 <body>
@@ -136,11 +138,15 @@
 
   <section class="wrap block">
     <h2>Our work</h2>
-    <p class="lead">Real jobs, real homes. Before and after.</p>
-    <div class="grid">
-      <div class="photo">[BEFORE PHOTO: a real job]</div>
-      <div class="photo">[AFTER PHOTO: the same job]</div>
-      <div class="photo">[PHOTO: a finished trim or built-in job]</div>
+    <p class="lead">Real jobs, real homes. Tap a photo to see it bigger.</p>
+    <!-- To use real photos: put an <img src="photos/kitchen-before.jpg" alt="..."> inside each .shot in place of the placeholder span. -->
+    <div class="gallery" id="gallery">
+      <button type="button" class="shot" data-caption="Kitchen cabinets, before"><span class="ph">[BEFORE PHOTO: kitchen cabinets]</span><span class="tag">Before</span></button>
+      <button type="button" class="shot" data-caption="Kitchen cabinets, after repainting"><span class="ph">[AFTER PHOTO: kitchen cabinets]</span><span class="tag">After</span></button>
+      <button type="button" class="shot" data-caption="Exterior repaint, before"><span class="ph">[BEFORE PHOTO: house exterior]</span><span class="tag">Before</span></button>
+      <button type="button" class="shot" data-caption="Exterior repaint, after"><span class="ph">[AFTER PHOTO: house exterior]</span><span class="tag">After</span></button>
+      <button type="button" class="shot" data-caption="Built-in shelves"><span class="ph">[PHOTO: built-in shelves]</span></button>
+      <button type="button" class="shot" data-caption="Porch boards and trim repair"><span class="ph">[PHOTO: porch repair]</span></button>
     </div>
   </section>
 
@@ -195,25 +201,72 @@
   </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <div class="col">
-      <span class="brand">Hollow Oak Carpentry &amp; Painting</span>
-      <span>Licensed and insured &middot; [LICENSE NUMBER]</span>
-    </div>
-    <div class="col">
-      <a href="tel:+13175550142">(317) 555-0142</a>
-      <span>Mon to Sat, [HOURS]</span>
+
+
+<dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+  <div class="lb-inner">
+    <div class="lb-stage" id="lb-stage"></div>
+    <div class="lb-caption" id="lb-caption"></div>
+    <div class="lb-controls">
+      <button type="button" class="lb-btn" id="lb-prev" aria-label="Previous photo">&#8592;</button>
+      <span class="lb-count" id="lb-count"></span>
+      <button type="button" class="lb-btn" id="lb-next" aria-label="Next photo">&#8594;</button>
+      <button type="button" class="lb-btn" id="lb-close">Close</button>
     </div>
   </div>
-</footer>
-
-<nav class="call-bar" aria-label="Contact">
-  <a class="call" href="tel:+13175550142">Call</a>
-  <a class="text" href="sms:+13175550142">Text</a>
-</nav>
+</dialog>
 
 <script>
+  // Photo gallery: tap a photo to open it large; swipe or use the arrows to move between photos.
+  (function () {
+    var shots = Array.prototype.slice.call(document.querySelectorAll('#gallery .shot'));
+    var box = document.getElementById('lightbox');
+    var stage = document.getElementById('lb-stage');
+    var caption = document.getElementById('lb-caption');
+    var count = document.getElementById('lb-count');
+    var current = 0;
+
+    function show(i) {
+      current = (i + shots.length) % shots.length;
+      var shot = shots[current];
+      var img = shot.querySelector('img');
+      stage.innerHTML = '';
+      if (img) {
+        var big = document.createElement('img');
+        big.src = img.src;
+        big.alt = img.alt;
+        stage.appendChild(big);
+      } else {
+        stage.textContent = shot.querySelector('.ph').textContent;
+      }
+      caption.textContent = shot.getAttribute('data-caption') || '';
+      count.textContent = (current + 1) + ' of ' + shots.length;
+    }
+
+    shots.forEach(function (shot, i) {
+      shot.addEventListener('click', function () {
+        show(i);
+        if (box.showModal) { box.showModal(); } else { box.setAttribute('open', ''); }
+      });
+    });
+    document.getElementById('lb-prev').addEventListener('click', function () { show(current - 1); });
+    document.getElementById('lb-next').addEventListener('click', function () { show(current + 1); });
+    document.getElementById('lb-close').addEventListener('click', function () { box.close(); });
+    box.addEventListener('click', function (e) { if (e.target === box || e.target.classList.contains('lb-inner')) { box.close(); } });
+    box.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { show(current - 1); }
+      if (e.key === 'ArrowRight') { show(current + 1); }
+    });
+    var startX = null;
+    stage.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
+    stage.addEventListener('touchend', function (e) {
+      if (startX === null) { return; }
+      var dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 40) { show(current + (dx < 0 ? 1 : -1)); }
+      startX = null;
+    });
+  })();
+
   // Demo only: show a thank-you message instead of sending the form anywhere.
   document.getElementById('quote-form').addEventListener('submit', function (e) {
     e.preventDefault();
